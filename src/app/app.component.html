@@ -1,0 +1,35 @@
+<div class="large-12  columns">
+  <div class=" columns backgroundColor">
+    <img class="maximumHeight large-3" src="../assets/UNICEF_ForEveryChild_White_Vertical_RGB_ENG.jpg">
+  </div>
+
+  <div class="large-9 columns">
+    <img class="maximumHeightImage" src="../assets/Pg18KidsBanner.jpg">
+  </div>
+</div>
+<div class='container'>
+
+  <div style="text-align:center">
+    <h1>
+      Welcome to {{ title }}!
+    </h1>
+    <input [(ngModel)]="searchText" class="form-control input-lg" placeholder="search by Acronym value or Expanded value">
+  </div>
+  <hr/>
+  <table class="table table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Acronym</th>
+        <th scope="col">Expanded</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of acronyms | filter : searchText">
+        <th scope="row">{{c.id}}</th>
+        <td>{{c.acronym}}</td>
+        <td>{{c.expanded}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
